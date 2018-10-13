@@ -1,0 +1,15 @@
+[Unit]
+Description=Private Proxy Server
+After=network.target
+
+[Service]
+User=nobody
+Group=nobody
+Type=simple
+WorkingDirectory=/usr/lib/PrivateProxy
+ExecStart=/usr/share/dotnet/dotnet /usr/lib/PrivateProxy/ss5.net.dll
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+
